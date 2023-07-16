@@ -3,10 +3,11 @@ import { GrAmazon } from "react-icons/gr";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { BsBasketFill } from "react-icons/bs";
 import { MdDarkMode } from "react-icons/md";
+import { useDispatch } from "react-redux";
 
 const Navbar = () => {
   const [mode, setMode] = useState(false);
-  console.log(mode);
+  const dispatch = useDispatch();
 
 useEffect(() => {
     const root = document.getElementById("root")
@@ -22,7 +23,7 @@ useEffect(() => {
   return (
     <div className="flex items-center justify-between px-3 bg-slate-300 h-28">
       <div>
-        <GrAmazon className="cursor-pointer" size={50} />
+        <GrAmazon className="cursor-pointer h-16 w-16"   />
       </div>
       <div className="flex items-center space-x-6">
         <input
@@ -46,7 +47,7 @@ useEffect(() => {
             />
           )}
         </div>
-        <div className="relative">
+        <div onClick={() => dispatch({type : "DRAWER" , payload :true })} className="relative">
           <BsBasketFill size={32} className="cursor-pointer" />
           <span className="absolute top-0 -right-2 px-2 bg-red-600 text-white rounded-full text-sm">
             3
