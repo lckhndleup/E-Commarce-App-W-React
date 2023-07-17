@@ -8,11 +8,8 @@ import store from "./Redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-<<<<<<< HEAD
-  <Provider>
-=======
+
   <Provider store={store}>
->>>>>>> 1a55dd5 (redux & components & pages & carddesigns & page design set)
     <App />
   </Provider>
 );
