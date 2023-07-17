@@ -10,6 +10,7 @@ function Detail() {
 
   const {product} = useSelector(state => state.product) ;
   const dispatch = useDispatch()
+  console.log(dispatch);
   useEffect(() => {
     dispatch(productsActionDetail(id ))
   },[dispatch])
