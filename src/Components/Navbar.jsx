@@ -4,6 +4,7 @@ import { MdOutlineDarkMode } from "react-icons/md";
 import { BsBasketFill } from "react-icons/bs";
 import { MdDarkMode } from "react-icons/md";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [mode, setMode] = useState(false);
@@ -20,10 +21,12 @@ useEffect(() => {
         root.style.color = "black"
     }
 })
+
+const navigate = useNavigate();
   return (
     <div className="flex items-center justify-between px-3 bg-slate-300 h-28">
       <div>
-        <GrAmazon className="cursor-pointer h-16 w-16"   />
+        <GrAmazon onClick={() => navigate("/")} className="cursor-pointer h-16 w-16"/>
       </div>
       <div className="flex items-center space-x-6">
         <input
