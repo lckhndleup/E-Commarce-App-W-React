@@ -41,7 +41,7 @@ function Detail() {
           <span className="font-bold">Stock</span> : {product?.rating?.count}
         </div>
         <div>
-          <span className="font-bold ">Category :</span>
+          <span className="font-bold">Category :</span>
           {product?.category}
         </div>
         <div className="font-bold text-3xl">
