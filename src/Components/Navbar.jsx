@@ -3,12 +3,21 @@ import { GrAmazon } from "react-icons/gr";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { BsBasketFill } from "react-icons/bs";
 import { MdDarkMode } from "react-icons/md";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { searchAction } from "../Redux/Actions/Search";
 
 const Navbar = () => {
   const [mode, setMode] = useState(false);
   const dispatch = useDispatch();
+  const { cardItems } = useSelector(state => state.card);
+  const [search,setSearch] =useState('')
+
+  const searchPost = (event)=>{
+    if(event.key === 'Enter'){
+      dispatch(searchAction(search))
+    }
+  }
 
 useEffect(() => {
     const root = document.getElementById("root")
@@ -30,6 +39,9 @@ const navigate = useNavigate();
       </div>
       <div className="flex items-center space-x-6">
         <input
+          value={search}
+          onChange={event => setSearch(event.target.value)}
+          onKeyPress={searchPost}
           className="border outline-none px-7 py-2 text-left rounded-lg"
           type="text"
           placeholder="Search"
@@ -53,7 +65,7 @@ const navigate = useNavigate();
         <div onClick={() => dispatch({type : "DRAWER" , payload :true })} className="relative">
           <BsBasketFill size={32} className="cursor-pointer" />
           <span className="absolute top-0 -right-2 px-2 bg-red-600 text-white rounded-full text-sm">
-            3
+            {cardItems?.length}
           </span>
         </div>
       </div>

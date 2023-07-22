@@ -28,11 +28,10 @@ function Detail() {
     dispatch(productsActionDetail(id));
   }, [dispatch, id]);
 
-
-  const addtoCard = () => {
-    dispatch(addBasketToCard(id,count))
-    dispatch({type : "DRAWER", payload : true})
-  }
+  const addCard = () => {
+    dispatch(addBasketToCard(id, count));
+    dispatch({ type: "DRAWER", payload: true });
+  };
 
   console.log("Product : ", product);
   return (
@@ -69,7 +68,10 @@ function Detail() {
             size={34}
           />
         </div>
-        <button onClick={addtoCard} className="p-3 w-full text-center rounded-lg text-white text-lg bg-indigo-600">
+        <button
+          onClick={addCard}
+          className="p-3 w-full text-center rounded-lg text-white text-lg bg-indigo-600"
+        >
           Sepete Ekle
         </button>
       </div>

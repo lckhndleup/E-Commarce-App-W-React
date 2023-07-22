@@ -5,7 +5,7 @@ export const cardReducer = (state = {cardItems : [] }, action) => {
     switch(action.type){
         case "ADD_CARD":
             const item = action.payload;
-            const existItem = state.cardItems.find( x => x.id === item.payload.id)
+            const existItem = state.cardItems.find( x => x.id === item.payload)
             if(existItem){
                 return{
                     ...state,
