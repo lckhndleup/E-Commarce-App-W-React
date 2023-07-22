@@ -4,18 +4,24 @@ import thunk from "redux-thunk";
 import { DrawerReducer } from "./Reducers/Drawer";
 import { productsReducer } from "./Reducers/Products";
 import { productsDetailReducer } from "./Reducers/ProductDetail";
+import { cardReducer } from "./Reducers/Card";
 
 
-let initialState =  {
 
+const cardItems = JSON.parse(localStorage.getItem('cardItems')) || []
+let initialState = {
+    card: {cardItems}
 }
 
 
+
 const reducers = combineReducers({
-    drawer : DrawerReducer ,
-    products : productsReducer,
-    product : productsDetailReducer,
-})
+    drawer: DrawerReducer,
+    products: productsReducer,
+    product: productsDetailReducer,
+    cardItems: cardReducer,
+  });
+  
 
 
 const store = createStore(reducers,initialState,composeWithDevTools(applyMiddleware(thunk)))
