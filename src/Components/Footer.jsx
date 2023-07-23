@@ -101,7 +101,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="Services-Section flex text-xs px-28 items-start py-8 gap-14 w-full text-white">
+      <div className="Services-Section flex text-xs px-28 items-start py-8 gap-14 w-full text-white justify-center">
         <div className="px-2">
           <a href="/">
             Amazon Web Services <br />{" "}
