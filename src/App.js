@@ -22,9 +22,10 @@ function App() {
           
         </Routes>
         {drawer && <Card/> }
-        <Footer/>
+        
       </Router>
       </PageContainer>
+      <Footer/>
     </div>
   );
 }
