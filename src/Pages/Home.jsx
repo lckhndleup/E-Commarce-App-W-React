@@ -16,6 +16,7 @@ function Home() {
     dispatch(searchAction())
   },[dispatch])
 
+  
   return (
     <div className="flex flex-wrap gap-8 sm:gap-12 md:gap-8 lg:gap-16  xl:gap-16" >
       {
