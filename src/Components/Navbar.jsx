@@ -6,6 +6,7 @@ import { MdDarkMode } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { searchAction } from "../Redux/Actions/Search";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [mode, setMode] = useState(false);
@@ -33,16 +34,16 @@ useEffect(() => {
 
 const navigate = useNavigate();
   return (
-    <div className="flex items-center justify-between px-3 bg-slate-300 h-28">
-      <div>
+    <div className="flex items-center justify-between px-3 bg-slate-300 h-28 w-full">
+      <div className="w-1/5">
         <GrAmazon onClick={() => navigate("/")} className="cursor-pointer h-16 w-16"/>
       </div>
-      <div className="flex items-center space-x-6">
+      <div className="RightPlace flex items-center space-x-6 w-4/5 bg-yellow-600">
         <input
           value={search}
           onChange={event => setSearch(event.target.value)}
           onKeyPress={searchPost}
-          className="border outline-none px-7 py-2 text-left rounded-lg"
+          className="SearchBtn border outline-none px-7 py-2 text-left rounded-lg"
           type="text"
           placeholder="Search"
         />
@@ -53,6 +54,9 @@ const navigate = useNavigate();
             className="cursor-pointer"
             size={26}
           />
+            
+
+
             
           ) : (
             <MdOutlineDarkMode
