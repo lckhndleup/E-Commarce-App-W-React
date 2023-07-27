@@ -8,10 +8,20 @@ import { cardReducer } from "./Reducers/Card";
 import { searchReducer } from "./Reducers/Search";
 
 
+
+
+
+
+
+
+
+
+
 const cardItems = JSON.parse(localStorage.getItem('cardItems')) || []
 let initialState = {
   card: {cardItems}
 }
+
 
 
 
@@ -21,6 +31,7 @@ const reducers = combineReducers({
     product: productsDetailReducer,
     card: cardReducer,
     search: searchReducer ,
+
   });
   
 

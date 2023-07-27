@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="İntroducts flex justify-center pt-10 pb-10 px-20  text-white leading-6 gap-28 w-full">
         <div className="one flex flex-col">
           <h1 className="font-bold">Hakkımızda</h1>
-          <a href="/">Kariyer</a>
+          <a href="/deneme">Kariyer</a>
           <a href="/">İletişim</a>
           <a href="/">Bilgi Toplumu Hizmetleri</a>
           <a href="/">Amazon Science</a>

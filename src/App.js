@@ -3,9 +3,11 @@ import Home from "./Pages/Home";
 import Detail from "./Pages/Detail";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
-import PageContainer from "./Containers/PageContainer";
+// import PageContainer from "./Containers/PageContainer";
 import { useSelector } from "react-redux";
 import Card from "./Components/Card";
+import Deneme from "./Pages/Deneme";
+
 
 function App() {
   const {drawer} = useSelector(state => state.drawer)
@@ -13,18 +15,19 @@ function App() {
   console.log("drawer",drawer);
   return (
     <div className="App">
-      <PageContainer>
+      {/* <PageContainer> */}
       <Router>
         <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/deneme" element={<Deneme/>}/>
           
         </Routes>
         {drawer && <Card/> }
         
       </Router>
-      </PageContainer>
+      {/* </PageContainer> */}
       <Footer/>
     </div>
   );
