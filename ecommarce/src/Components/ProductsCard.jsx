@@ -17,7 +17,7 @@ const ProductsCard = ({ prdcts }) => {
       </div>
       <div className="font-bold text-lg">{prdcts?.price} $</div>
       <button className="bg-indigo-600 w-full p-2 rounded-lg text-white">
-        SEPETE EKLE
+        SEPETE EKLE 
       </button>
     </div>
   );
