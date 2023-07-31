@@ -10,6 +10,7 @@ const ProductsCard = ({ prdcts }) => {
         className="h-32 object-cover"
         src={prdcts.images?.[1]}
         alt=""
+        
       />
       <div className="font-bold h-16">{(prdcts?.title).substring(0, 45)}</div>
       <div className="text-center opacity-70 text-sm">
